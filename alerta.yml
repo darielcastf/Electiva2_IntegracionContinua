@@ -1,0 +1,15 @@
+name: Notificar a ntfy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notificar:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Enviar notificación a ntfy.sh
+      run: |
+        curl -d "El usuario darielcastf ha subido código nuevo a main!" ntfy.sh/devops-itla
